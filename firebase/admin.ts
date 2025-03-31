@@ -1,8 +1,12 @@
 import {cert, getApps, initializeApp} from "firebase-admin/app"
+import { getAuth } from "firebase-admin/auth";
+import { getFirestore } from "firebase-admin/firestore";
 
+console.log("hii");
 
 const initFirebaseAdmin = ()=>{
     const apps = getApps();
+   console.log("the app is ", apps);
 
     if(!apps.length){
         initializeApp({
@@ -15,7 +19,7 @@ const initFirebaseAdmin = ()=>{
     }
 return {
     auth:getAuth(),
-    db: getFireStore()
+    db: getFirestore()
 }
 
 }
